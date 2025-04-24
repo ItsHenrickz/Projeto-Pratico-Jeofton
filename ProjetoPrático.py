@@ -18,6 +18,15 @@ verde = (0, 255, 0)
 tamanho_quadrado = 20
 velocidade_cobra = 15
 
+def gerar_comida():
+    comida_x = round(random.randrange(0, largura - tamanho_quadrado) / 20.0) * 20.0
+    comida_y = round(random.randrange(0, altura - tamanho_quadrado) / 20.0) * 20.0
+    return comida_x, comida_y
+
+def desenhar_comida(tamanho_quadrado, comida_x, comida_y):
+    pygame.draw.rect(tela, verde, [comida_x, comida_y, tamanho_quadrado, tamanho_quadrado])
+
+
 def rodar_jogo():
     fim_jogo = False
 
@@ -30,12 +39,18 @@ def rodar_jogo():
     tamanho_cobra = 1
     pixels = []
 
+    comida_x, comida_y = gerar_comida()
+
     while not fim_jogo:
         tela.fill(preta)
 
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 fim_jogo = True
+
+        #desenhar_comida
+        desenhar_comida(tamanho_quadrado, comida_x, comida_y)
+
 # criar um loop infinito
 
 # desenhar os objetos do jogo na tela
