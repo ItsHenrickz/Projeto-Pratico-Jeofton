@@ -14,6 +14,11 @@ preta = (0, 0, 0)
 branca = (255, 255, 255)
 vermelha = (255, 0, 0)
 verde = (0, 255, 0)
+image = pygame.image.load('gramado.jpg')
+
+def Background(image):
+    size = pygame.transform.scale(image, (1200, 800))
+    tela.blit(size, (0, 0))
 
 # Parâmetros da cobrinha
 tamanho_quadrado = 20
@@ -25,7 +30,7 @@ def gerar_comida():
     return comida_x, comida_y
 
 def desenhar_comida(tamanho, comida_x, comida_y):
-    pygame.draw.rect(tela, verde, [comida_x, comida_y, tamanho, tamanho])
+    pygame.draw.rect(tela, vermelha, [comida_x, comida_y, tamanho, tamanho])
 
 def desenhar_cobra(tamanho, pixels):
     for pixel in pixels:
@@ -55,10 +60,11 @@ def rodar_jogo():
     velocidade_y = 0
     tamanho_cobra = 1
     pixels = []
-    comida_x, comida_y = gerar_comida()
+    comida_x, comida_y = gerar_comida() 
 
     while not fim_jogo:
         tela.fill(preta)
+        Background(image)
 
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
