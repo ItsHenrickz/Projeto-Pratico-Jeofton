@@ -1,2 +1,2 @@
 # Projeto-Pratico-Jeofton
-Projeto em Python
+Projeto em Python utilizando a biblioteca Pygame e a biblioteca Random, onde é produzido um dos famosos ''Jogos da Cobrinha'', onde ela deve comer a maior quantidade possível de comidas, e a cada comida q ela come, ela fica maior. Foram utilzadas diversas variáveis, como variáveis de cores, tamanho da tela, tamanho de cada quadradinho no jogo e velocidade da cobra. Também foram utilizadas funções para gerar as comidas em locais aleatórios da tela e para desenhar essas comidas.
